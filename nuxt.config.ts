@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  ssr: true,
   modules: [
     "@nuxtjs/tailwindcss",
     '@nuxtjs/robots',
@@ -21,6 +22,8 @@ export default defineNuxtConfig({
       '2xl': 1536
     },
     dir: 'public/images',
-    provider: "ipx"
+    provider: 'static',
+
   }
+
 })
