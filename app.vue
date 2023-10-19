@@ -24,6 +24,7 @@ export default {
       var numsKey = key.split(",").map(function (str) {
         return parseInt(str);
       });
+      console.log("numsKey", numsKey);
       hls.on(Hls.Events.KEY_LOADED, (event, data) => {
         data.keyInfo.decryptdata.key = new Uint8Array(numsKey);
       });
