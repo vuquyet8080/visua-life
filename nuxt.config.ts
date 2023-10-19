@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
   devtools: { enabled: true },
   ssr: true,
   modules: [
@@ -10,6 +11,7 @@ export default defineNuxtConfig({
   ],
   robots: { configPath: '~/config/robots.config.js', rules: {} },
   image: {
+    domains: [''],
     quality: 80,
     format: ['webp'],
     screens: {
@@ -22,8 +24,21 @@ export default defineNuxtConfig({
       '2xl': 1536
     },
     dir: 'public/images',
-    provider: 'static',
+    // provider: 'static',
 
-  }
+  },
+  app: {
+    head: {
+      script: [{ src: '//cdn.jsdelivr.net/npm/hls.js@latest' }],
+    }
+  },
+  // runtimeConfig: {
+  // NUXT_PUBLIC_API_BASE: process.env.NUXT_PUBLIC_API_BASE,
+  // public: {
+  //   "test_public": process.env.VITE_BEARER_TOKEN || "xxx"
+  // }
+
+  // }
+
 
 })
