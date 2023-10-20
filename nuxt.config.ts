@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
 
   devtools: { enabled: true },
+  routeRules: {
+    '/': { prerender: true, ssr: true, },
+  },
   ssr: true,
   modules: [
     "@nuxtjs/tailwindcss",
@@ -32,13 +35,14 @@ export default defineNuxtConfig({
       script: [{ src: '//cdn.jsdelivr.net/npm/hls.js@latest' }],
     }
   },
-  // runtimeConfig: {
-  // NUXT_PUBLIC_API_BASE: process.env.NUXT_PUBLIC_API_BASE,
-  // public: {
-  //   "test_public": process.env.VITE_BEARER_TOKEN || "xxx"
-  // }
+  runtimeConfig: {
+    // NUXT_HLS_SECRET: process.env.NUXT_HLS_SECRET,
+    public: {
+      NUXT_HLS_SECRET: process.env.NUXT_HLS_SECRET,
+      "test_public": "test_public",
+    }
 
-  // }
+  }
 
 
 })
